@@ -1,1 +1,0 @@
-# Udacity_Weather_Journal
