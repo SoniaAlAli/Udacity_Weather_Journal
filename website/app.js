@@ -2,11 +2,11 @@
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+let newDate = d.getMonth()+ 1 +'.'+ d.getDate()+'.'+ d.getFullYear();
 
 // API Key from OpenWeatherMap
 
-const apiKey = '&appid=0aac2a4a94d00fa44b02115462a129c9';
+const apiKey = '&appid=0aac2a4a94d00fa44b02115462a129c9&units=metric';
 const baseURL ='https://api.openweathermap.org/data/2.5/weather?zip=';
 
 // Add listener to Generate button
@@ -66,7 +66,7 @@ const updateUI = async()=>{
         const output = await request.json();
         //console.log(output)
         document.getElementById('date').innerHTML= 'Today is ' + output.date;
-        document.getElementById('temp').innerHTML= 'The outside temperature in Kelvin is ' + output.temp.toFixed(0);
+        document.getElementById('temp').innerHTML= 'The outside temperature is ' + output.temp.toFixed(0) + ' &#8451';
         document.getElementById('content').innerHTML= 'and I am feeling ' + output.content;
         console.log(output)
     }catch(error){
